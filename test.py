@@ -11,11 +11,8 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def hello_world():
-    retObj = {
-        "name": "Ganesh"
-    }
-    return Response(json.dumps(retObj), status=200, mimetype='application/json')
+def welcome_screen():
+    return '<html><body><h1>Welcome</h1></body></html>'
 
 
 @app.route('/save', methods=['POST'])
