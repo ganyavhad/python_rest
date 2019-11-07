@@ -10,13 +10,6 @@ db = client.test
 app = Flask(__name__)
 
 
-class JSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, ObjectId):
-            return str(o)
-        return json.JSONEncoder.default(self, o)
-
-
 @app.route('/', methods=['GET'])
 def hello_world():
     retObj = {
